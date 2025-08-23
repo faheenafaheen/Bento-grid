@@ -1,0 +1,334 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+--Purple1: hsl(254, 88%, 90%);
+--Purple2: hsl(256, 67%, 59%);
+--Yellow1: hsl(31, 66%, 93%);
+--Yellow2: hsl(39, 100%, 71%);
+--White: hsl(0, 0%, 100%);
+--Black: hsl(0, 0%, 7%);
+}
+
+body{
+   background-color: #f5f5f5;
+   min-height: 100vh;
+   font-family: 'DM sans';
+   font-size:18px;
+   line-height:1;
+   display: grid;
+   place-content: center;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.grid-container{
+  display: grid;
+   grid-template-areas:
+  'post review review schedule'
+  'post review review schedule'
+  'post review review schedule'
+  'post review review schedule'
+  'post manage maintain schedule'
+  'ai manage maintain schedule'
+  'ai manage maintain schedule'
+  'ai audience grow grow'
+  'ai audience grow grow'
+  'ai audience grow grow';  
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 75px;
+  max-width: 1400px;
+  margin: 1rem; /* centers container but removes left gap */
+  gap:2rem;
+}
+
+.item{
+  overflow: hidden;
+}
+
+/* post card */
+.post{
+    background-color: var(--Yellow1);
+    font-size: 2.5rem;
+    font-weight: 500;
+    grid-area: post;
+    padding: 6rem 2rem 0 2.5rem;
+}
+
+.post em{
+  font-family: "DM Sans", sans-serif;
+  font-style: italic;
+  color:var(--Purple2);
+}
+
+.post p{
+  font-family: "DM Sans", sans-serif;
+}
+
+.post-image{
+ margin-top: 1rem;
+}
+
+
+/* Review card */
+.reviews{
+  display:flex;
+  flex-direction:column;
+  background-color:var(--Purple2);
+  color:var(--White);
+  font-family: 'Inter', sans-serif;
+  padding:2rem;
+  justify-content: center;
+  align-items:center;
+  border-radius:5px;
+  grid-area:review;
+}
+
+.reviews h1{
+   flex-wrap: wrap;
+  font-size:3.5rem;
+   font-family: 'Inter', sans-serif;
+   font-weight: 500;
+  text-align:center;
+}
+
+.review-image{
+  width:250px;
+  margin-top:10px;
+}
+
+.reviews p{
+   /* flex-wrap: wrap; */
+  font-family: 'Inter', sans-serif;
+  font-size:1rem;
+}
+
+/* schedule card */
+.schedule{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  background-color:var(--Purple1);
+  padding: 2.75rem 2rem 2.5rem 2rem;
+  position: relative;
+  border-radius: 10px;
+  grid-area: schedule;
+}
+
+.schedule h3{
+  /* margin:30px; */
+  /* flex-wrap:wrap; */
+   font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+}
+
+.schedule-image{
+  position: absolute;
+  object-fit: cover;
+  object-position: left;
+  top:150px;
+  height:410px;
+}
+
+.schedule p{
+  flex-wrap:wrap;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  padding:20px 30px;
+  font-size:1rem;
+  font-weight: 600;
+}
+
+/* ai-card */
+.ai-content{
+  background-color: var(--Yellow2);
+  /* min-width:250px; */
+  padding:1.75rem 2.25rem;
+  border-radius: 10px;
+  grid-area: ai;
+  
+}
+
+.ai-content h2{
+font-family: 'Inter', sans-serif;
+font-size: 2.65rem;
+letter-spacing: -2px;
+margin-bottom: 2rem;
+font-weight: 500;
+}
+
+/* manage-card */
+.manage{
+  font-family: 'Inter', sans-serif;
+  background-color:var(--White);
+  border-radius: 10px;
+  padding:1rem 2rem 1rem 2rem;
+  position: relative;
+  grid-area: manage;
+}
+
+.manage-image{
+  position: absolute;
+}
+
+.manage p{ 
+  font-size: 2rem;
+  margin-top: 6rem;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+
+/* maintain card */
+.maintain{
+  padding:10px;
+  font-family: 'Inter', sans-serif;
+  background-color:var(--Yellow2);
+ padding: 1rem 1.75rem;
+  border-radius: 10px;
+  grid-area: maintain;
+  position: relative;
+}
+
+/* .maintain-image{
+  padding: 5px;
+  margin-top: -5px;
+} */
+
+.maintain p{
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight:500;
+  letter-spacing: -1px;
+}
+
+
+/* audience-card */
+.audience-growth{
+  background-color: var(--White);
+  padding: 1.5rem;
+  border-radius: 10px;
+  grid-area: audience;
+}
+
+.audience-growth p span{
+  font-size: 2.75rem;
+  font-family: 'Inter', sans-serif;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.audience-growth p{
+  font-family: 'Inter', sans-serif;
+  font-size:1rem;
+}
+
+.audience-image{
+  margin-top: 1.5rem;
+}
+
+/* followers card */
+.followers{
+  font-family: 'Inter', sans-serif;
+  background-color: var(--Purple2);
+  padding: 2rem;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1.75fr 2fr;
+  align-items: center;
+  border-radius: 10px;
+  grid-area: grow;
+}
+
+
+.followers p{
+  color: var(--White);
+  font-size: 2rem;
+}
+
+@media screen and (max-width:1024px){
+  .grid-container{
+    grid-template-areas: 
+    'post post review review'
+    'post post review review'
+    'schedule schedule ai ai'
+    'schedule schedule ai ai'
+    'manage manage maintain maintain'
+    'manage manage maintain maintain'
+    'audience audience grow grow'
+    'audience audience grow grow';
+    grid-auto-rows: initial;
+  }
+}
+
+@media screen and (max-width:768px){
+.grid-container{
+  grid-template-areas: 
+  'review'
+  'manage'
+  'maintain'
+  'schedule'
+  'grow'
+  'audience'
+  'post'
+  'ai';
+}
+
+.manage p{
+  margin-top: 10rem;
+}
+
+.maintain p {
+ margin-top: 2rem;
+}
+
+.schedule h3{
+  font-size: 2.25rem;
+}
+
+.schedule img{
+  margin: 1rem 0;
+  position: initial;
+  height: initial;
+}
+
+.schedule p{
+  font-size: 1.25rem;
+  text-align: center;
+  font-family: 500;
+}
+.followers{
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em 4rem;
+}
+
+.followers img{
+  padding: 1rem 5rem;
+}
+
+.followers p{
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.audience-growth p{
+  font-size: 1.45rem;
+}
+
+.post{
+  font-weight: 700;
+  padding-left: 3rem;
+}
+
+.ai{
+  font-weight: 700;
+}
+}
+
